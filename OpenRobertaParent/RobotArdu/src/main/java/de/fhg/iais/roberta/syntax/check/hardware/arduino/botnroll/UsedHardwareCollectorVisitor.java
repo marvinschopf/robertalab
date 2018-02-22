@@ -42,13 +42,4 @@ public class UsedHardwareCollectorVisitor extends RobotUsedHardwareCollectorVisi
     public Void visitExternalLedOffAction(ExternalLedOffAction<Void> externalLedOffAction) {
         return null;
     }
-<<<<<<< HEAD
-=======
-
-    @Override
-    public Void visitRgbColor(RgbColor<Void> rgbColor) {
-        return null;
-    }
-
->>>>>>> #745 added base Uno files, configuration draft
 }

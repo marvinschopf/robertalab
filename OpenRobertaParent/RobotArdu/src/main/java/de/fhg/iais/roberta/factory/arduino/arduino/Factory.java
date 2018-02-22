@@ -13,7 +13,8 @@ import de.fhg.iais.roberta.factory.IRobotFactory;
 import de.fhg.iais.roberta.inter.mode.action.IActorPort;
 import de.fhg.iais.roberta.inter.mode.action.ILightSensorActionMode;
 import de.fhg.iais.roberta.inter.mode.action.IShowPicture;
-import de.fhg.iais.roberta.mode.actors.arduino.botnroll.ActorPort;
+import de.fhg.iais.roberta.inter.mode.sensor.ISensorPort;
+import de.fhg.iais.roberta.mode.action.ActorPort;
 import de.fhg.iais.roberta.syntax.Phrase;
 import de.fhg.iais.roberta.syntax.check.program.RobotBrickCheckVisitor;
 import de.fhg.iais.roberta.syntax.check.program.RobotSimulationCheckVisitor;
@@ -136,7 +137,7 @@ public class Factory extends AbstractRobotFactory {
 
     @Override
     public Boolean hasConfiguration() {
-        return this.arduinoProperties.getProperty("robot.configuration") != null ? false : true;
+        return Boolean.parseBoolean(this.arduinoProperties.getProperty("robot.configuration"));
     }
 
     @Override
@@ -163,6 +164,12 @@ public class Factory extends AbstractRobotFactory {
 
     @Override
     public ILightSensorActionMode getLightActionColor(String mode) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public ISensorPort getSensorPort(String port) {
         // TODO Auto-generated method stub
         return null;
     }

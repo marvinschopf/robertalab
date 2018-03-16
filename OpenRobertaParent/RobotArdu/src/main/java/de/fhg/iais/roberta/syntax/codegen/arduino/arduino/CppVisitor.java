@@ -182,7 +182,7 @@ public class CppVisitor extends ArduinoVisitor implements ArduinoAstVisitor<Void
 
     @Override
     public Void visitLightSensor(LightSensor<Void> lightSensor) {
-        this.sb.append("analogRead(_eingang_" + lightSensor.getPort().getPortNumber() + ")");
+        this.sb.append("analogRead(_eingang_" + lightSensor.getPort().getOraName() + ")");
         //this.sb.append("analogRead(eingang_" + lightSensor.getBlockName() + ")");
         return null;
     }
@@ -205,13 +205,13 @@ public class CppVisitor extends ArduinoVisitor implements ArduinoAstVisitor<Void
 
     @Override
     public Void visitUltrasonicSensor(UltrasonicSensor<Void> ultrasonicSensor) {
-        this.sb.append("pulseIn(_echo_" + ultrasonicSensor.getPort().getPortNumber() + ", HIGH)*_signalToDistance");
+        this.sb.append("pulseIn(_echo_" + ultrasonicSensor.getPort().getOraName() + ", HIGH)*_signalToDistance");
         return null;
     }
 
     @Override
     public Void visitMoistureSensor(MoistureSensor<Void> moistureSensor) {
-        this.sb.append("analogRead(_moisturePin_" + moistureSensor.getPort().getPortNumber() + ")");
+        this.sb.append("analogRead(_moisturePin_" + moistureSensor.getPort().getOraName() + ")");
         return null;
     }
 
